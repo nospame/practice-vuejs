@@ -11,19 +11,37 @@
 <body>
   <h1>Hello from HTML!</h1>
   <div id="app">
-    <p>{{ message }}</p>
-    <br>
-    <button @click="addOneToCount()">Add one</button>
-    <button @click="subtractOneFromCount()">Subtract one</button>
-    <button @click="doubleCount()">Double</button>
-    <button @click="resetCount()">Reset</button>
-    <br>
-    {{ count }}
-    <p><input v-model="text">
-      {{ text }}
+    <div id="calc">
+      <p>{{ message }}</p>
       <br>
-      <button @click="resetText()">Reset text</button>
-    </p>
+      <button @click="addOneToCount()">Add one</button>
+      <button @click="subtractOneFromCount()">Subtract one</button>
+      <button @click="doubleCount()">Double</button>
+      <button @click="resetCount()">Reset</button>
+      <br>
+      {{ count }}
+    </div>
+    <hr>
+
+    <div id="inputText">
+      <p><input v-model="text">
+        {{ text }}
+        <br>
+        <button @click="resetText()">Reset text</button>
+      </p>
+    </div>
+
+    <hr>
+
+    <div id="countriesList">
+      <ol>
+        <li v-for="country in countries">
+          {{ country }}
+        </li>
+      </ol>
+      <input type="text" v-model="newCountry"></input>
+      <button v-on:click="saveCountry()">Save</button>
+    </div>
 
   </div>
 </body>

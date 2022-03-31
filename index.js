@@ -5,7 +5,9 @@ var App = {
     return {
       message: "Hello from JavaScript!",
       text: "",
-      count: 0
+      count: 0,
+      countries: ["Guatemala", "France", "China"],
+      newCountry: ""
     };
   },
   methods: {
@@ -23,6 +25,10 @@ var App = {
     },
     resetText: function () {
       this.text = "";
+    },
+    saveCountry: function () {
+      this.countries.push(this.newCountry);
+      this.newCountry = "";
     }
   }
 };
